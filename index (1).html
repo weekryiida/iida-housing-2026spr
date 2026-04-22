@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>あなたにぴったりの家づくりタイプ診断 | 週刊いいだ 住宅特集</title>
+  <title>あなたにぴったりの家づくりタイプ診断 | 週刊いいだ 住まい特集</title>
   <style>
     * {
       margin: 0;
@@ -432,62 +432,38 @@
     <header>
       <div class="header-content">
         <h1>あなたにぴったりの家づくりタイプ診断</h1>
-        <p>週刊いいだ 住宅特集 presented by 飯田の家づくりパートナー</p>
+        <p>週刊いいだ 住まい特集 presented by 暮らし住まいのパートナー</p>
       </div>
     </header>
-
+ 
     <main>
       <!-- イントロセクション -->
       <div id="intro" class="section">
         <div class="hero-box">
-          <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; display: block;">
-            <defs>
-              <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#d4e8f0;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#f0f5f8;stop-opacity:1" />
-              </linearGradient>
-            </defs>
-            <rect width="800" height="600" fill="url(#skyGrad)"/>
-            <path d="M 0 350 Q 200 300, 400 320 T 800 350 L 800 600 L 0 600 Z" fill="#c4d4a8" opacity="0.5"/>
-            <ellipse cx="150" cy="450" rx="100" ry="30" fill="#b8c8a0" opacity="0.6"/>
-            <ellipse cx="700" cy="470" rx="90" ry="28" fill="#a8b890" opacity="0.6"/>
-            <rect x="250" y="250" width="300" height="200" fill="#f5f0e8" stroke="#c0b8a8" stroke-width="2"/>
-            <polygon points="250,250 400,140 550,250" fill="#8b7a67" stroke="#5a4a3a" stroke-width="2"/>
-            <rect x="280" y="280" width="80" height="80" fill="#b3d9ff" stroke="#6b8fa3" stroke-width="2"/>
-            <line x1="320" y1="280" x2="320" y2="360" stroke="#6b8fa3" stroke-width="1.5"/>
-            <line x1="280" y1="320" x2="360" y2="320" stroke="#6b8fa3" stroke-width="1.5"/>
-            <rect x="420" y="290" width="70" height="70" fill="#b3d9ff" stroke="#6b8fa3" stroke-width="2"/>
-            <line x1="455" y1="290" x2="455" y2="360" stroke="#6b8fa3" stroke-width="1.5"/>
-            <line x1="420" y1="325" x2="490" y2="325" stroke="#6b8fa3" stroke-width="1.5"/>
-            <rect x="390" y="370" width="40" height="80" fill="#8b7a6a" stroke="#4a3a2a" stroke-width="2"/>
-            <circle cx="425" cy="410" r="3" fill="#d4af37"/>
-            <rect x="220" y="420" width="360" height="40" fill="#d4b8a0" stroke="#a89870" stroke-width="1.5"/>
-            <circle cx="180" cy="400" r="35" fill="#7a9e6f" opacity="0.7"/>
-            <circle cx="730" cy="420" r="40" fill="#8aae7f" opacity="0.7"/>
-          </svg>
+          <img src="house2.png" alt="モダンな家と庭" style="width: 100%; height: auto; display: block; max-height: 350px; object-fit: cover;">
         </div>
-
+ 
         <div class="intro-text">
-          <p>住宅購入は人生で最大の決断の一つ。このちょっとした診断を通じて、あなたにぴったりな家づくりのアプローチが見つかります。</p>
-          <p>5つの質問にお答えいただくだけで、あなたの理想の家づくりをサポートしてくれるパートナーをご紹介します。</p>
+          <p>住宅購入は人生で最大の決断の一つ。このちょっとした診断を通じて、あなたにぴったりな暮らし・住まいづくりのアプローチが見つかります。</p>
+          <p>5つの質問にお答えいただくだけで、あなたの理想の暮らし・住まいづくりをサポートしてくれるパートナーをご紹介します。</p>
         </div>
-
+ 
         <button class="btn" onclick="goToQuiz()">診断をはじめる</button>
       </div>
-
+ 
       <!-- クイズセクション -->
       <div id="quiz" class="section hidden">
         <div class="progress-bar">
           <div id="progressFill" class="progress-fill" style="width: 0%"></div>
         </div>
         <p class="progress-text">問 <span id="questionNum">1</span> / 5</p>
-
+ 
         <div id="questionsContainer"></div>
-
+ 
         <button id="nextBtn" class="btn" style="display: none; margin-top: 30px;" onclick="goToResult()">診断結果を見る →</button>
         <button class="btn btn-secondary" onclick="goToIntro()">最初に戻る</button>
       </div>
-
+ 
       <!-- 結果セクション -->
       <div id="result" class="section hidden">
         <div class="result-box">
@@ -495,31 +471,31 @@
           <h2 id="resultTitle" class="result-title"></h2>
           <p class="result-description">あなたのタイプに合った企業を優先的にご紹介します。ぜひ、各企業の詳細情報をチェックしてみてください。</p>
         </div>
-
+ 
         <div class="sponsors-section">
           <h3>パートナー企業一覧</h3>
           <div id="sponsorsRecommended" class="sponsors-list sponsors-recommended"></div>
           <div id="sponsorsOther" class="sponsors-other">
-            <p class="sponsors-other-label">週刊いいだ 住宅特集 スポンサー一覧</p>
+            <p class="sponsors-other-label">週刊いいだ 住まい特集 スポンサー一覧</p>
             <div id="sponsorsOtherList" class="sponsors-list sponsors-other-list"></div>
           </div>
         </div>
-
+ 
         <button class="btn btn-secondary" onclick="resetDiagnosis()">診断を再度実行</button>
       </div>
     </main>
-
+ 
     <footer>
       <p>週刊いいだ × 飯田地域住宅・不動産パートナー</p>
     </footer>
   </div>
-
+ 
   <script>
     // スポンサーデータ
     const sponsors = {
       '金融系': [
-        { name: 'ろうきん ローンセンター飯田', url: 'https://www.nagano-rokin.co.jp/loan_center/detail/9' },
-        { name: 'JAみなみ信州 ローンセンター', url: 'https://www.ja-mis.iijan.or.jp/pages/loancenter' },
+        { name: '長野ろうきん ローンセンター飯田', url: 'https://www.nagano-rokin.co.jp/loan_center/detail/9' },
+        { name: 'JAみなみ信州 JAローンセンター', url: 'https://www.ja-mis.iijan.or.jp/pages/loancenter' },
         { name: '飯田信用金庫 しんきんプラザ みらとも', url: 'https://www.iidashinkin.co.jp/personal/loan/loancenter/' }
       ],
       '土地探し': [
@@ -528,23 +504,24 @@
       'ハウスメーカー・工務店': [
         { name: 'くましろハウジング', url: 'https://kumashiro-housing.com/' },
         { name: '城東工務店', url: 'http://joto-k.com/' },
-        { name: '小木曽建設', url: 'https://www.ogiken.co.jp/' },
         { name: 'エースホーム飯田店', url: 'https://www.acehome.co.jp/shop/iida' }
       ],
       '外構': [
-        { name: '有限会社 赤松庵', url: 'https://sekisyoan.net/' }
+        { name: '小木曽建設', url: 'https://www.ogiken.co.jp/' },
+        { name: '赤松庵', url: 'https://sekisyoan.net/' }
       ]
     };
-
+ 
     // 質問データ
     const questions = [
       {
         id: 'q1',
         title: '家づくりで最初に検討することは？',
         options: [
-          { label: '予算・資金計画', value: 'budget' },
-          { label: '土地探し', value: 'land' },
-          { label: 'デザイン・間取り', value: 'design' }
+          { label: '無理なく建てられる家の予算を知りたい', value: 'budget' },
+          { label: '理想の土地から家づくりを始めたい', value: 'land' },
+          { label: '自分たちらしい家のデザインを追求したい', value: 'design' },
+          { label: '完成後の庭や外構にこだわりたい', value: 'exterior' }
         ]
       },
       {
@@ -569,8 +546,8 @@
         id: 'q4',
         title: '立地の希望は？',
         options: [
-          { label: '都市型・駅近', value: 'urban' },
-          { label: '郊外・自然環境', value: 'suburban' },
+          { label: '駅から近い', value: 'urban' },
+          { label: '自然環境が豊か', value: 'suburban' },
           { label: 'こだわらない', value: 'flexible' }
         ]
       },
@@ -584,7 +561,7 @@
         ]
       }
     ];
-
+ 
     // 住宅画像（SVG文字列）
     const houseImages = [
       // 画像1: モダン和風
@@ -596,28 +573,28 @@
       // 画像3: モダンミニマル
       `<defs><linearGradient id="sky3" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#d4e8f0;stop-opacity:1" /><stop offset="100%" style="stop-color:#e8f4f8;stop-opacity:1" /></linearGradient><linearGradient id="softLight3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.2" /><stop offset="50%" style="stop-color:#ffffff;stop-opacity:0" /><stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.15" /></linearGradient></defs><rect width="800" height="600" fill="url(#sky3)"/><path d="M 0 280 Q 200 200, 400 220 T 800 280 L 800 600 L 0 600 Z" fill="#b8c4a8" opacity="0.4"/><rect width="800" height="600" fill="url(#softLight3)"/><rect x="0" y="420" width="800" height="180" fill="#d0c4b0"/><ellipse cx="180" cy="500" rx="140" ry="50" fill="#a4b890" opacity="0.6"/><ellipse cx="680" cy="510" rx="120" ry="45" fill="#b4c8a0" opacity="0.6"/><rect x="260" y="260" width="280" height="170" fill="#f0ebe0" stroke="#c0b8a8" stroke-width="2"/><rect x="260" y="240" width="280" height="25" fill="#6b5a47" opacity="0.9"/><polygon points="260,240 400,190 540,240" fill="#8b7a67" stroke="#5a4a3a" stroke-width="1.5"/><rect x="250" y="430" width="300" height="25" fill="#e0d8cc" stroke="#b8b0a0" stroke-width="1.5"/><rect x="290" y="300" width="110" height="70" fill="#a8d8e8" stroke="#5a7a8c" stroke-width="2"/><line x1="345" y1="300" x2="345" y2="370" stroke="#5a7a8c" stroke-width="1.5"/><line x1="290" y1="335" x2="400" y2="335" stroke="#5a7a8c" stroke-width="1.5"/><rect x="440" y="310" width="90" height="60" fill="#a8d8e8" stroke="#5a7a8c" stroke-width="2"/><line x1="485" y1="310" x2="485" y2="370" stroke="#5a7a8c" stroke-width="1.5"/><line x1="440" y1="340" x2="530" y2="340" stroke="#5a7a8c" stroke-width="1.5"/><rect x="405" y="370" width="50" height="80" fill="#8b7a6a" stroke="#4a3a2a" stroke-width="2"/><circle cx="450" cy="410" r="3" fill="#c8a882"/><rect x="240" y="400" width="320" height="35" fill="#d4b8a0" stroke="#a89870" stroke-width="1.5"/><circle cx="250" cy="430" r="25" fill="#7a9e6f" opacity="0.7"/><circle cx="720" cy="445" r="30" fill="#8aae7f" opacity="0.7"/><ellipse cx="310" cy="460" rx="28" ry="20" fill="#6a8e5f" opacity="0.6"/><ellipse cx="630" cy="475" rx="32" ry="22" fill="#7a9e6f" opacity="0.6"/>`
     ];
-
+ 
     let answers = {};
-
+ 
     // 初期化
     function init() {
       // 初期化処理
     }
-
+ 
     // ページ遷移
     function goToQuiz() {
       document.getElementById('intro').classList.add('hidden');
       document.getElementById('quiz').classList.remove('hidden');
       renderQuestions();
     }
-
+ 
     function goToIntro() {
       document.getElementById('quiz').classList.add('hidden');
       document.getElementById('result').classList.add('hidden');
       document.getElementById('intro').classList.remove('hidden');
       answers = {};
     }
-
+ 
     // 質問レンダリング
     function renderQuestions() {
       const container = document.getElementById('questionsContainer');
@@ -643,30 +620,39 @@
       document.getElementById('progressFill').style.width = (answered / 5) * 100 + '%';
       document.getElementById('nextBtn').style.display = answered === 5 ? 'block' : 'none';
     }
-
+ 
     // 回答保存
     function selectAnswer(qId, value) {
       answers[qId] = value;
       renderQuestions();
     }
-
+ 
     // 診断結果ロジック
     function getResultType() {
-      if (answers.q1 === 'budget' || answers.q5 === 'soon') {
+      // Q1が最優先
+      if (answers.q1 === 'budget') {
         return 'まずは資金計画・ローン相談';
       } else if (answers.q1 === 'land') {
         return 'まずは土地探し';
-      } else {
+      } else if (answers.q1 === 'exterior') {
+        return 'まずは庭や外構を整えたい';
+      } else if (answers.q1 === 'design') {
         return 'まずはハウスメーカー・工務店に相談';
       }
+      // Q5も考慮（補助的）
+      if (answers.q5 === 'soon') {
+        return 'まずは資金計画・ローン相談';
+      }
+      return 'まずはハウスメーカー・工務店に相談';
     }
-
+ 
     // ソート済みスポンサー取得
     function getSortedSponsors(resultType) {
       const categoryMap = {
         'まずは資金計画・ローン相談': '金融系',
         'まずは土地探し': '土地探し',
-        'まずはハウスメーカー・工務店に相談': 'ハウスメーカー・工務店'
+        'まずはハウスメーカー・工務店に相談': 'ハウスメーカー・工務店',
+        'まずは庭や外構を整えたい': '外構'
       };
       
       const allSponsors = [];
@@ -684,7 +670,7 @@
       
       return allSponsors;
     }
-
+ 
     // 結果表示
     function goToResult() {
       const resultType = getResultType();
@@ -719,13 +705,13 @@
         </div>
       `).join('');
     }
-
+ 
     // リセット
     function resetDiagnosis() {
       answers = {};
       goToIntro();
     }
-
+ 
     // 初期化
     init();
   </script>
