@@ -440,7 +440,7 @@
       <!-- イントロセクション -->
       <div id="intro" class="section">
         <div class="hero-box">
-          <img src="house2.png" alt="モダンな家と庭" style="width: 100%; height: auto; display: block; max-height: 350px; object-fit: cover;">
+          <img src="house2.png" alt="モダンな家と庭" style="width: 100%; height: auto; display: block;">
         </div>
  
         <div class="intro-text">
@@ -685,7 +685,7 @@
           <a class="sponsor-link" 
              href="${s.url}" 
              target="_blank"
-             onclick="if(typeof gtag !== 'undefined') gtag('event', \"${s.name}\", {\"type\": \"recommended\"})">
+             onclick="gtag('event', '${s.name}', {'type': 'recommended'})">
             詳細を見る →
           </a>
         </div>
@@ -699,7 +699,7 @@
           <a class="sponsor-link other" 
              href="${s.url}" 
              target="_blank"
-             onclick="if(typeof gtag !== 'undefined') gtag('event', \"${s.name}\", {\"type\": \"other\"})">
+             onclick="gtag('event', '${s.name}', {'type': 'other'})">
             詳細
           </a>
         </div>
