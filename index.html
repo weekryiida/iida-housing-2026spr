@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>あなたにぴったりの家づくりタイプ診断 | 週刊いいだ 住まい特集</title>
+  <title>あなたにぴったりの家づくりタイプ診断 | 週刊いいだ 住宅特集</title>
   <style>
     * {
       margin: 0;
@@ -426,21 +426,13 @@
       }
     }
   </style>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-V04C5JVZQR');
-</script>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="header-content">
         <h1>あなたにぴったりの家づくりタイプ診断</h1>
-        <p>週刊いいだ 住まい特集 presented by 暮らし住まいのパートナー</p>
+        <p>週刊いいだ 住宅特集 presented by 飯田の家づくりパートナー</p>
       </div>
     </header>
  
@@ -448,12 +440,12 @@
       <!-- イントロセクション -->
       <div id="intro" class="section">
         <div class="hero-box">
-          <img src="house2.png" alt="モダンな家と庭" style="width: 100%; height: auto; display: block; max-height: 350px; object-fit: cover;">
+          <img src="house.png" alt="モダンな家と庭" style="width: 100%; height: auto; display: block;">
         </div>
  
         <div class="intro-text">
-          <p>住宅購入は人生で最大の決断の一つです。簡単な診断を通じて、あなたにぴったりな暮らし・住まいづくりのアプローチを見つけましょう！</p>
-          <p>あなたの理想の暮らし・住まいづくりに向けて、週刊いいだ「住まい特集」でご紹介した頼れるパートナーをご紹介します。</p>
+          <p>住宅購入は人生で最大の決断の一つ。このちょっとした診断を通じて、あなたにぴったりな家づくりのアプローチが見つかります。</p>
+          <p>5つの質問にお答えいただくだけで、あなたの理想の家づくりをサポートしてくれるパートナーをご紹介します。</p>
         </div>
  
         <button class="btn" onclick="goToQuiz()">診断をはじめる</button>
@@ -484,7 +476,7 @@
           <h3>パートナー企業一覧</h3>
           <div id="sponsorsRecommended" class="sponsors-list sponsors-recommended"></div>
           <div id="sponsorsOther" class="sponsors-other">
-            <p class="sponsors-other-label">週刊いいだ 住まい特集 スポンサー一覧</p>
+            <p class="sponsors-other-label">週刊いいだ 住宅特集 スポンサー一覧</p>
             <div id="sponsorsOtherList" class="sponsors-list sponsors-other-list"></div>
           </div>
         </div>
@@ -494,7 +486,7 @@
     </main>
  
     <footer>
-      <p>週刊いいだ × 住まい特集</p>
+      <p>週刊いいだ × 飯田地域住宅・不動産パートナー</p>
     </footer>
   </div>
  
@@ -502,8 +494,8 @@
     // スポンサーデータ
     const sponsors = {
       '金融系': [
-        { name: '長野ろうきん ローンセンター飯田', url: 'https://www.nagano-rokin.co.jp/loan_center/detail/9' },
-        { name: 'JAみなみ信州 JAローンセンター', url: 'https://www.ja-mis.iijan.or.jp/pages/loancenter' },
+        { name: 'ろうきん ローンセンター飯田', url: 'https://www.nagano-rokin.co.jp/loan_center/detail/9' },
+        { name: 'JAみなみ信州 ローンセンター', url: 'https://www.ja-mis.iijan.or.jp/pages/loancenter' },
         { name: '飯田信用金庫 しんきんプラザ みらとも', url: 'https://www.iidashinkin.co.jp/personal/loan/loancenter/' }
       ],
       '土地探し': [
@@ -516,7 +508,7 @@
       ],
       '外構': [
         { name: '小木曽建設', url: 'https://www.ogiken.co.jp/' },
-        { name: '赤松庵', url: 'https://sekisyoan.net/' }
+        { name: '有限会社 赤松庵', url: 'https://sekisyoan.net/' }
       ]
     };
  
@@ -554,8 +546,8 @@
         id: 'q4',
         title: '立地の希望は？',
         options: [
-          { label: '駅から近い', value: 'urban' },
-          { label: '自然環境が豊か', value: 'suburban' },
+          { label: '都市型・駅近', value: 'urban' },
+          { label: '郊外・自然環境', value: 'suburban' },
           { label: 'こだわらない', value: 'flexible' }
         ]
       },
@@ -700,7 +692,12 @@
             <p class="sponsor-name">${s.name}</p>
             <span class="sponsor-badge">おすすめ</span>
           </div>
-          <a class="sponsor-link" href="${s.url}" target="_blank">詳細を見る →</a>
+          <a class="sponsor-link" 
+             href="${s.url}" 
+             target="_blank"
+             onclick="gtag('event', '${s.name}', {'type': 'recommended'})">
+            詳細を見る →
+          </a>
         </div>
       `).join('');
       
@@ -709,7 +706,12 @@
       otherList.innerHTML = others.map(s => `
         <div class="sponsor-card other">
           <p class="sponsor-name" style="margin-bottom: 8px;">${s.name}</p>
-          <a class="sponsor-link other" href="${s.url}" target="_blank">詳細</a>
+          <a class="sponsor-link other" 
+             href="${s.url}" 
+             target="_blank"
+             onclick="gtag('event', '${s.name}', {'type': 'other'})">
+            詳細
+          </a>
         </div>
       `).join('');
     }
