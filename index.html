@@ -694,7 +694,7 @@
           <a class="sponsor-link" 
              href="${s.url}" 
              target="_blank"
-             onclick="gtag('event', '${s.name}', {'type': 'recommended'})">
+             onclick="trackClick('${s.name}', 'recommended')"
             詳細を見る →
           </a>
         </div>
@@ -708,7 +708,7 @@
           <a class="sponsor-link other" 
              href="${s.url}" 
              target="_blank"
-             onclick="gtag('event', '${s.name}', {'type': 'other'})">
+             onclick="trackClick('${s.name}', 'other')"
             詳細
           </a>
         </div>
@@ -720,7 +720,13 @@
       answers = {};
       goToIntro();
     }
- 
+    
+   // Google Analytics カスタムイベント関数
+    function trackClick(name, type) {
+      if(typeof gtag !== 'undefined') {
+        gtag('event', name, {'type': type});
+      }
+    }
     // 初期化
     init();
   </script>
