@@ -698,7 +698,7 @@
           <a class="sponsor-link" 
              href="${s.url}" 
              target="_blank"
-             onclick="gtag('event', '${s.name}', {'type': 'recommended'})">
+             onclick='trackClick("${s.name}", "recommended")'>
             詳細を見る →
           </a>
         </div>
@@ -709,10 +709,10 @@
       otherList.innerHTML = others.map(s => `
         <div class="sponsor-card other">
           <p class="sponsor-name" style="margin-bottom: 8px;">${s.name}</p>
-          <a class="sponsor-link other" 
+           <a class="sponsor-link other" 
              href="${s.url}" 
              target="_blank"
-             onclick="gtag('event', '${s.name}', {'type': 'other'})">
+             onclick='trackClick("${s.name}", "other")'>
             詳細
           </a>
         </div>
