@@ -607,7 +607,7 @@
           <h2>${nextQuestion.title}</h2>
           <div class="options-container">
             ${nextQuestion.options.map(opt => `
-              <button class="option-btn" onclick="selectAnswer('${nextQuestion.id}', '${opt.value}')">${opt.label}</button>
+              <button class="option-btn" onclick="gtag('event', 'q1_answer', {'answer': '${opt.value}'})">${opt.label}</button>
             `).join('')}
           </div>
         `;
