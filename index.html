@@ -1,3 +1,6 @@
+Index · HTML
+コピー
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -426,15 +429,6 @@
       }
     }
   </style>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V04C5JVZQR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-V04C5JVZQR');
-</script>
-</head>
 </head>
 <body>
   <div class="container">
@@ -607,7 +601,7 @@
           <h2>${nextQuestion.title}</h2>
           <div class="options-container">
             ${nextQuestion.options.map(opt => `
-              <button class="option-btn" onclick="gtag('event', 'q1_answer', {'answer': '${opt.value}'})">${opt.label}</button>
+              <button class="option-btn" onclick="selectAnswer('${nextQuestion.id}', '${opt.value}')">${opt.label}</button>
             `).join('')}
           </div>
         `;
@@ -622,6 +616,9 @@
  
     // 回答保存
     function selectAnswer(qId, value) {
+      if(qId === 'q1' && typeof gtag !== 'undefined') {
+        gtag('event', 'q1_answer', {'answer': value});
+      }
       answers[qId] = value;
       renderQuestions();
     }
@@ -694,7 +691,7 @@
           <a class="sponsor-link" 
              href="${s.url}" 
              target="_blank"
-             onclick='trackClick("${s.name}", "recommended")'>
+             onclick="gtag('event', '${s.name}', {'type': 'recommended'})">
             詳細を見る →
           </a>
         </div>
@@ -708,7 +705,7 @@
           <a class="sponsor-link other" 
              href="${s.url}" 
              target="_blank"
-             onclick='trackClick("${s.name}", "other")'>
+             onclick="gtag('event', '${s.name}', {'type': 'other'})">
             詳細
           </a>
         </div>
@@ -720,13 +717,15 @@
       answers = {};
       goToIntro();
     }
-    
-   // Google Analytics カスタムイベント関数
+
+    // Google Analytics カスタムイベント関数
     function trackClick(name, type) {
       if(typeof gtag !== 'undefined') {
         gtag('event', name, {'type': type});
       }
     }
+    
+    
     // 初期化
     init();
   </script>
