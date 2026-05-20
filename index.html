@@ -623,12 +623,12 @@
  
     // 回答保存
     function selectAnswer(qId, value) {
-      if(qId === 'q1' && typeof gtag !== 'undefined') {
-        gtag('event', 'q1_answer', {'answer': value});
-      }
-      answers[qId] = value;
-      renderQuestions();
-    }
+  if(qId === 'q1' && typeof gtag !== 'undefined') {
+    gtag('event', value, {'q1_answer': 'true'});
+  }
+  answers[qId] = value;
+  renderQuestions();
+}
  
     // 診断結果ロジック
     function getResultType() {
